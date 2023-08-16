@@ -4,12 +4,10 @@ import requests
 from dotenv import find_dotenv, load_dotenv
 from transformers import pipeline
 from langchain import PromptTemplate, LLMChain
-
 from langchain.chat_models import ChatOpenAI
-
-sys.path.append(".")
 from config import API_URL, MODEL
 
+sys.path.append(".")
 load_dotenv(dotenv_path=".")
 HFACE_API_TOKEN = os.getenv("HFACE_API_TOKEN")
 
@@ -18,7 +16,6 @@ def get_caption(img_loc):
     """Creates a caption for the input image"""
     pl = pipeline("image-to-text", model=MODEL)
     caption = pl(img_loc)[0]["generated_text"]
-    print(caption)
     return caption
 
 
