@@ -3,9 +3,8 @@ from utils import get_caption, generate_story, text_to_speech
 
 
 def main():
-
     st.set_page_config(page_title="Storify Your Image", page_icon="\U0001F642")
-    st.header("Turn image into an amusing little story.")
+    st.header("Turn your image into an amusing little story.")
     img = st.file_uploader("Upload an image:", type="jpg")
 
     if img:
